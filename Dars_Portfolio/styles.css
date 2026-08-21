@@ -1,0 +1,2248 @@
+/* ==========================================================
+   GENERAL VIRTUAL ASSISTANT PORTFOLIO
+   FILE: styles.css
+   AUTHOR: Darlene Aprille Andaya Portfolio
+
+   TABLE OF CONTENTS
+
+   1. Global Design / Body
+   2. Reusable Components
+   3. Header
+   4. Hero Section
+   5. About Section
+   6. Services Section
+   7. Skills Section
+   8. Projects Section
+   9. Contact Section
+   10. Footer
+   11. Animations
+   12. Responsive Design
+========================================================== */
+
+
+/* ==========================================================
+   1. GLOBAL DESIGN / BODY
+========================================================== */
+
+:root{
+    --bg:#F7F1EB;
+    --bg-light:#FFFDFB;
+    --primary:#A56A3A;
+    --primary-dark:#7C4C28;
+    --text:#46352A;
+    --gray:#7B6A5E;
+    --border:#E7D7C7;
+
+    --radius:20px;
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    --transition:.35s ease;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
+    overflow-x:hidden;
+
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+
+    width:min(1150px,92%);
+    margin:auto;
+
+}
+
+
+/* ==========================================================
+   2. REUSABLE COMPONENTS
+========================================================== */
+
+.section{
+    padding:100px 0;
+}
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:60px;
+
+}
+
+.section-title span{
+
+    color:var(--primary);
+    font-size:.9rem;
+    letter-spacing:3px;
+    font-weight:600;
+
+}
+
+.section-title h2{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    margin-top:10px;
+
+}
+
+/* Primary Button */
+
+.btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    min-width:155px;
+    padding:14px 22px;
+
+    background:var(--primary);
+    color:white;
+
+    border:2px solid var(--primary);
+    border-radius:12px;
+
+    font-size:.95rem;
+    font-weight:600;
+
+    box-shadow:0 8px 20px rgba(165,106,58,.20);
+
+    transition:var(--transition);
+
+}
+
+.btn:hover{
+
+    background:var(--primary-dark);
+    border-color:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(124,76,40,.25);
+
+}
+
+.btn-arrow{
+
+    font-size:1.1rem;
+    font-weight:600;
+
+    transition:transform .3s ease;
+
+}
+
+.btn:hover .btn-arrow{
+
+    transform:translateX(4px);
+
+}
+
+/* Outline Button */
+
+.btn-outline{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    min-width:175px;
+    padding:14px 22px;
+
+    background:transparent;
+    color:var(--primary);
+
+    border:2px solid var(--primary);
+    border-radius:12px;
+
+    font-size:.95rem;
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+    color:white;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 22px rgba(165,106,58,.18);
+
+}
+
+.btn-outline:hover .btn-arrow{
+
+    transform:translate(3px,-3px);
+
+}
+
+
+/* ==========================================================
+   3. HEADER DESIGN
+========================================================== */
+
+.header{
+
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;
+
+    background:rgba(247,241,235,.85);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.nav-container{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:80px;
+
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--text);
+}
+
+.logo-mark{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:45px;
+    height:45px;
+    border:2px solid var(--primary);
+    border-radius:50%;
+    color:var(--primary);
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.25rem;
+    font-weight:700;
+    letter-spacing:-1px;
+}
+
+.logo-text{
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--text);
+    white-space:nowrap;
+}
+
+nav{
+
+    display:flex;
+    gap:30px;
+
+}
+
+nav a{
+
+    color:var(--text);
+    font-size:.95rem;
+    transition:var(--transition);
+
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+.menu{
+
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   4. HERO SECTION DESIGN
+========================================================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding-top:100px;
+    padding-bottom:60px; 
+}
+
+.hero-grid{
+
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:60px;
+
+}
+
+.hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:5.5rem;
+    line-height:.95;
+
+}
+
+.hero h1 span{
+
+    display:block;
+    color:var(--primary);
+
+}
+
+.position{
+
+    display:inline-block;
+    background:var(--primary);
+    color:white;
+
+    padding:12px 28px;
+    border-radius:40px;
+
+    margin:25px 0;
+
+    letter-spacing:2px;
+    font-size:.9rem;
+
+}
+
+.hero-text{
+
+    color:var(--gray);
+    margin-bottom:30px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+
+}
+
+.hero-features{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+
+}
+
+.feature{
+
+    background:var(--bg-light);
+    border-radius:18px;
+
+    padding:18px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.feature:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.feature span{
+
+    font-size:1.3rem;
+
+}
+
+.hero-image{
+
+    position:relative;
+
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-image img{
+    width:85%;          /* Make the photo smaller */
+    max-width:380px;    /* Prevent it from becoming too large */
+    border-radius:30px;
+    box-shadow:var(--shadow);
+}
+
+
+/* ==========================================================
+   5. ABOUT SECTION DESIGN
+========================================================== */
+
+.about{
+
+    background:var(--bg-light);
+
+}
+
+.about-grid{
+
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:50px;
+    align-items:center;
+
+}
+
+/* ABOUT ME PHOTO */
+
+.about-image{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.about-image img{
+
+    width:85%;
+    max-width:380px;
+
+    border-radius:25px;
+    box-shadow:var(--shadow);
+
+    display:block;
+
+}
+
+.about-content h3{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:2.2rem;
+    margin-bottom:20px;
+
+}
+
+.about-content p{
+
+    color:var(--gray);
+    margin-bottom:20px;
+
+}
+
+.about-strengths{
+
+    margin-top:35px;
+
+}
+
+.strengths-title{
+
+    margin-bottom:20px;
+
+}
+
+.strengths-title span{
+
+    position:relative;
+
+    display:inline-block;
+
+    color:var(--text);
+
+    font-size:1rem;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+    padding-bottom:8px;
+
+}
+
+.strengths-title span::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:30px;
+    height:2px;
+
+    background:var(--primary);
+
+}
+
+
+/* ==========================================================
+   STRENGTHS GRID
+========================================================== */
+
+.strengths-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:0;
+
+    background:var(--bg-light);
+
+}
+
+
+/* ==========================================================
+   INDIVIDUAL STRENGTH CARD
+========================================================== */
+
+.strength-card{
+
+    text-align:center;
+
+    padding:10px 18px 15px;
+
+    min-height:180px;
+
+    border-right:1px solid var(--border);
+
+    transition:var(--transition);
+
+}
+
+.strength-card:last-child{
+
+    border-right:none;
+
+}
+
+
+/* ==========================================================
+   ICON CIRCLE
+========================================================== */
+
+.strength-icon{
+
+    width:68px;
+    height:68px;
+
+    margin:0 auto 14px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#F8E4E1;
+
+    border-radius:50%;
+
+    color:var(--text);
+
+    transition:var(--transition);
+
+}
+
+.strength-icon svg{
+
+    width:36px;
+    height:36px;
+
+}
+
+.strength-card:hover .strength-icon{
+
+    background:#F2D5D0;
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   STRENGTH TITLE
+========================================================== */
+
+.strength-card h4{
+
+    color:var(--text);
+
+    font-size:.78rem;
+
+    line-height:1.3;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+    letter-spacing:.3px;
+
+}
+
+
+/* ==========================================================
+   STRENGTH DESCRIPTION
+========================================================== */
+
+.strength-card p{
+
+    color:var(--gray);
+
+    font-size:.72rem;
+
+    line-height:1.65;
+
+    margin:0;
+
+}
+
+
+/* ==========================================================
+   6. SERVICES SECTION DESIGN
+========================================================== */
+
+.service-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+
+}
+
+.service-card{
+
+    background:var(--bg-light);
+    border-radius:20px;
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.icon{
+
+    font-size:2.3rem;
+    margin-bottom:18px;
+
+}
+
+.service-card h3{
+
+    margin-bottom:12px;
+    font-size:1.2rem;
+
+}
+
+.service-card p{
+
+    color:var(--gray);
+    font-size:.9rem;
+
+}
+
+
+/* ==========================================================
+   7. SKILLS & TOOLS SECTION DESIGN
+========================================================== */
+
+.skills{
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFDFB 0%,
+            #F9F0EB 100%
+        );
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================================
+   MAIN SKILLS LAYOUT
+========================================================== */
+
+.skills-layout{
+
+    display:grid;
+
+    grid-template-columns:1.15fr .85fr;
+
+    gap:35px;
+
+    align-items:stretch;
+
+}
+
+
+/* ==========================================================
+   KEY SKILLS PANEL
+========================================================== */
+
+.key-skills{
+
+    background:#FFFDFB;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:
+        0 12px 35px rgba(70,53,42,.07);
+
+}
+
+
+/* ==========================================================
+   PANEL TITLE
+========================================================== */
+
+.skills-panel-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:28px;
+
+}
+
+.skills-title-icon{
+
+    width:52px;
+    height:52px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#F8E3E0;
+
+    color:var(--text);
+
+    border-radius:50%;
+
+}
+
+.skills-title-icon svg{
+
+    width:27px;
+    height:27px;
+
+}
+
+.skills-panel-title span{
+
+    display:block;
+
+    color:var(--primary);
+
+    font-size:.68rem;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+    margin-bottom:2px;
+
+}
+
+.skills-panel-title h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2rem;
+
+    line-height:1;
+
+    color:var(--text);
+
+}
+
+
+/* ==========================================================
+   INDIVIDUAL SKILL
+========================================================== */
+
+.skill-item{
+
+    display:grid;
+
+    grid-template-columns:52px 1fr;
+
+    gap:15px;
+
+    padding:16px 0;
+
+    border-bottom:1px solid #EDE2DA;
+
+}
+
+.skill-item:last-of-type{
+
+    border-bottom:none;
+
+}
+
+
+/* ==========================================================
+   SKILL ICON
+========================================================== */
+
+.skill-icon{
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#F9E9E6;
+
+    color:var(--text);
+
+    border-radius:50%;
+
+    transition:var(--transition);
+
+}
+
+.skill-icon svg{
+
+    width:25px;
+    height:25px;
+
+}
+
+.skill-item:hover .skill-icon{
+
+    background:#F1D3D0;
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   SKILL CONTENT
+========================================================== */
+
+.skill-content{
+
+    min-width:0;
+
+}
+
+.skill-name-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:6px;
+
+}
+
+.skill-name-row h4{
+
+    text-transform:uppercase;
+
+    color:var(--text);
+
+    font-size:.82rem;
+
+    letter-spacing:.7px;
+
+    font-weight:700;
+
+}
+
+.skill-name-row span{
+
+    color:var(--primary);
+
+    font-size:.76rem;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================================
+   SKILL PROGRESS BAR
+========================================================== */
+
+.skill-bar{
+
+    width:100%;
+
+    height:7px;
+
+    background:#EDE7E1;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:7px;
+
+}
+
+.skill-progress{
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #C8787E,
+            #D99A9D
+        );
+
+    border-radius:20px;
+
+    position:relative;
+
+}
+
+.skill-progress::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    top:50%;
+
+    width:9px;
+    height:9px;
+
+    background:#C8787E;
+
+    border:2px solid #FFFDFB;
+
+    border-radius:50%;
+
+    transform:translate(2px,-50%);
+
+}
+
+.skill-content p{
+
+    color:var(--gray);
+
+    font-size:.72rem;
+
+    line-height:1.5;
+
+    margin:0;
+
+}
+
+
+/* ==========================================================
+   SKILLS NOTE
+========================================================== */
+
+.skills-note{
+
+    margin-top:22px;
+
+    padding:15px 18px;
+
+    display:grid;
+
+    grid-template-columns:auto 1fr auto;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#F9E8E5;
+
+    border-radius:15px;
+
+}
+
+.skills-note-icon{
+
+    width:30px;
+    height:30px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:50%;
+
+    font-size:.75rem;
+
+}
+
+.skills-note p{
+
+    color:var(--gray);
+
+    font-size:.7rem;
+
+    line-height:1.45;
+
+    margin:0;
+
+}
+
+.skills-note span{
+
+    color:var(--primary);
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+}
+
+
+/* ==========================================================
+   TOOLS PANEL
+========================================================== */
+
+.tools-panel{
+
+    background:#FFFDFB;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:
+        0 12px 35px rgba(70,53,42,.07);
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/* ==========================================================
+   TOOLS HEADER
+========================================================== */
+
+.tools-header{
+
+    text-align:center;
+
+    margin-bottom:22px;
+
+}
+
+.tools-header > span{
+
+    color:var(--primary);
+
+    font-size:.68rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.tools-header h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    color:var(--text);
+
+    font-size:2.3rem;
+
+    line-height:1;
+
+    margin:5px 0 10px;
+
+}
+
+.tools-line{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+}
+
+.tools-line i{
+
+    display:block;
+
+    width:55px;
+    height:1px;
+
+    background:#D99A9D;
+
+}
+
+.tools-line b{
+
+    color:#C8787E;
+
+    font-size:1.1rem;
+
+    font-weight:400;
+
+}
+
+
+/* ==========================================================
+   TOOLS GRID
+========================================================== */
+
+.tools-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    column-gap:25px;
+
+    row-gap:0;
+
+}
+
+.tool-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:17px 0;
+
+    min-width:0;
+
+    border-bottom:1px solid #EDE2DA;
+
+}
+
+.tool-item:nth-last-child(-n+2){
+
+    border-bottom:none;
+
+}
+
+
+/* ==========================================================
+   TOOL LOGOS
+========================================================== */
+
+.tool-logo{
+
+    width:48px;
+    height:48px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    font-weight:700;
+
+    font-size:1.25rem;
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.08);
+
+}
+
+
+/* CANVA */
+
+.canva-logo{
+
+    background:
+        linear-gradient(
+            135deg,
+            #35C8B4,
+            #7B46E8
+        );
+
+    color:white;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-style:italic;
+
+}
+
+
+/* TRELLO */
+
+.trello-logo{
+
+    background:#3179B7;
+
+    gap:4px;
+
+}
+
+.trello-logo span{
+
+    width:6px;
+    height:22px;
+
+    background:white;
+
+    border-radius:3px;
+
+}
+
+
+/* GOOGLE */
+
+.google-logo{
+
+    background:white;
+
+    color:#4285F4;
+
+    border:1px solid #E4DDD7;
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+}
+
+
+/* SLACK */
+
+.slack-logo{
+
+    background:#F3F0EB;
+
+    color:#5B4B44;
+
+    font-size:1.8rem;
+
+}
+
+
+/* OFFICE */
+
+.office-logo{
+
+    background:#E9572B;
+
+    color:white;
+
+    font-size:1.7rem;
+
+}
+
+
+/* CAPCUT */
+
+.capcut-logo{
+
+    background:#151515;
+
+    color:white;
+
+    font-size:1.8rem;
+
+}
+
+
+/* CHATGPT */
+
+.chatgpt-logo{
+
+    background:#65B89A;
+
+    color:white;
+
+    font-size:1.5rem;
+
+}
+
+
+/* GMAIL */
+
+.gmail-logo{
+
+    background:#FFF;
+
+    border:1px solid #E4DDD7;
+
+    color:#D85B4A;
+
+    font-weight:800;
+
+    font-size:1.25rem;
+
+}
+
+
+/* ==========================================================
+   TOOL TEXT
+========================================================== */
+
+.tool-info{
+
+    min-width:0;
+
+}
+
+.tool-info h4{
+
+    color:var(--text);
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    margin-bottom:3px;
+
+}
+
+.tool-info p{
+
+    color:var(--gray);
+
+    font-size:.68rem;
+
+    line-height:1.45;
+
+    margin:0;
+
+}
+
+
+/* ==========================================================
+   TOOL HOVER
+========================================================== */
+
+.tool-item{
+
+    transition:var(--transition);
+
+}
+
+.tool-item:hover{
+
+    transform:translateX(4px);
+
+}
+
+.tool-item:hover .tool-logo{
+
+    transform:scale(1.05);
+
+}
+
+.tool-logo{
+
+    transition:var(--transition);
+
+}
+
+
+/* ==========================================================
+   8. PROJECT SECTION DESIGN
+========================================================== */
+
+.project-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+
+}
+
+.project-card{
+
+    background:white;
+    overflow:hidden;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.project-card img{
+
+    height:220px;
+    object-fit:cover;
+
+}
+
+.project-content{
+
+    padding:22px;
+
+}
+
+.project-content h3{
+
+    margin-bottom:10px;
+
+}
+
+.project-content p{
+
+    color:var(--gray);
+    font-size:.92rem;
+
+}
+
+/* ==========================================================
+   PROJECT PREVIEW BUTTON + LIGHTBOX
+========================================================== */
+
+.project-image{
+    position:relative;
+    overflow:hidden;
+}
+
+.project-image img{
+    height:220px;
+    object-fit:cover;
+    transition:.35s ease;
+}
+
+.project-card:hover .project-image img{
+    transform:scale(1.03);
+}
+
+/* Small button */
+
+.preview-btn{
+
+    position:absolute;
+    bottom:12px;
+    right:12px;
+
+    background:rgba(255,255,255,.95);
+    color:var(--text);
+
+    border:none;
+    border-radius:30px;
+
+    padding:8px 14px;
+
+    font-size:.75rem;
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.15);
+
+    transition:var(--transition);
+
+}
+
+.preview-btn:hover{
+
+    background:var(--primary);
+    color:#fff;
+
+}
+
+/* Lightbox */
+
+.lightbox{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.88);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:40px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s ease;
+
+    z-index:9999;
+
+}
+
+.lightbox.active{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.lightbox img{
+
+    max-width:95%;
+    max-height:90vh;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+.close-lightbox{
+
+    position:absolute;
+    top:25px;
+    right:35px;
+
+    color:#fff;
+
+    font-size:42px;
+    font-weight:300;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.close-lightbox:hover{
+
+    transform:scale(1.15);
+
+}
+
+
+/* ==========================================================
+   9. CONTACT SECTION DESIGN
+========================================================== */
+
+.contact{
+    background:linear-gradient(135deg,#F5E8DB,#F9F3EE);
+}
+
+.contact-box{
+
+    max-width:760px;
+    margin:auto;
+
+    background:#fff;
+    border-radius:30px;
+
+    padding:60px 45px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+.contact-box span{
+
+    color:var(--primary);
+    letter-spacing:3px;
+    font-size:.9rem;
+    font-weight:600;
+
+}
+
+.contact-box h2{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    margin:12px 0;
+
+}
+
+.contact-box > p{
+
+    color:var(--gray);
+    max-width:560px;
+    margin:0 auto 35px;
+
+}
+
+/* Contact List */
+
+.contact-details{
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+}
+
+.contact-item{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    text-align:left;
+
+    padding:18px 22px;
+
+    background:var(--bg-light);
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    transition:var(--transition);
+
+}
+
+.contact-item:hover{
+
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+}
+
+.contact-icon{
+
+    width:56px;
+    height:56px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#F8E4E1;
+
+    border-radius:50%;
+
+    font-size:1.4rem;
+    flex-shrink:0;
+
+}
+
+.contact-item h4{
+
+    font-size:1rem;
+    color:var(--text);
+    margin-bottom:2px;
+
+}
+
+.contact-item p{
+
+    color:var(--gray);
+    font-size:.92rem;
+    margin:0;
+
+}
+
+/* ==========================================================
+   10. FOOTER DESIGN
+========================================================== */
+
+.footer{
+
+    background:#34241B;
+    color:#F2E7DF;
+
+    text-align:center;
+
+    padding:25px;
+
+    font-size:.9rem;
+
+}
+
+
+/* ==========================================================
+   11. SCROLL ANIMATION
+========================================================== */
+
+.hidden{
+
+    opacity:0;
+    transform:translateY(50px);
+
+    transition:1s ease;
+
+}
+
+.show{
+
+    opacity:1;
+    transform:translateY(0);
+
+}
+
+
+/* ==========================================================
+   12. RESPONSIVE DESIGN
+========================================================== */
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media(max-width:992px){
+
+    /* ---------- General Layout ---------- */
+
+    .hero-grid,
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .project-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .service-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .hero{
+
+        text-align:center;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+
+    /* ======================================================
+       SKILLS & TOOLS — TABLET
+    ====================================================== */
+
+    .skills-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .tools-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:768px){
+
+    /* ---------- Navigation ---------- */
+
+    nav{
+
+        position:absolute;
+
+        top:100px;
+        left:0;
+
+        width:100%;
+
+        background:var(--bg);
+
+        display:none;
+
+        flex-direction:column;
+
+        padding:20px;
+
+        border-top:1px solid var(--border);
+
+    }
+
+    nav.active{
+
+        display:flex;
+
+    }
+
+    .menu{
+
+        display:block;
+
+    }
+
+
+    /* ---------- Hero ---------- */
+
+    .hero h1{
+
+        font-size:4rem;
+
+    }
+
+
+    /* ---------- Section Titles ---------- */
+
+    .section-title h2{
+
+        font-size:2.3rem;
+
+    }
+
+
+    /* ---------- Services & Projects ---------- */
+
+    .service-grid,
+    .project-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    /* ---------- Hero Features ---------- */
+
+    .hero-features{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    /* ======================================================
+       ABOUT — MY STRENGTHS
+    ====================================================== */
+
+    .about-strengths{
+
+        margin-top:30px;
+
+    }
+
+    .strengths-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:0;
+
+    }
+
+    .strength-card{
+
+        border-right:none;
+
+        border-bottom:1px solid var(--border);
+
+        padding:15px 12px;
+
+    }
+
+    .strength-card:nth-child(odd){
+
+        border-right:1px solid var(--border);
+
+    }
+
+    .strength-card:nth-child(3),
+    .strength-card:nth-child(4){
+
+        border-bottom:none;
+
+    }
+
+    .strength-icon{
+
+        width:60px;
+        height:60px;
+
+    }
+
+    .strength-icon svg{
+
+        width:32px;
+        height:32px;
+
+    }
+
+
+    /* ======================================================
+       SKILLS & TOOLS — MOBILE
+    ====================================================== */
+
+    .skills-heading{
+
+        display:block;
+
+        text-align:center;
+
+    }
+
+    .skills-heading-text{
+
+        max-width:100%;
+
+    }
+
+    .skills-label{
+
+        padding-left:0;
+
+    }
+
+    .skills-label::before{
+
+        display:none;
+
+    }
+
+    .skills-heading h2{
+
+        font-size:3rem;
+
+    }
+
+    .skills-heading-decoration{
+
+        justify-content:center;
+
+        margin-top:15px;
+
+    }
+
+    .key-skills,
+    .tools-panel{
+
+        padding:25px 20px;
+
+        border-radius:20px;
+
+    }
+
+    .skills-layout{
+
+        gap:25px;
+
+    }
+
+    .skills-note{
+
+        grid-template-columns:auto 1fr;
+
+    }
+
+    .skills-note span{
+
+        grid-column:2;
+
+    }
+
+
+    /* ---------- Contact ---------- */
+
+.contact-box{
+    padding:40px 22px;
+}
+
+.contact-box h2{
+    font-size:2.3rem;
+}
+
+.contact-item{
+    padding:16px;
+    gap:14px;
+}
+
+.contact-icon{
+    width:48px;
+    height:48px;
+    font-size:1.2rem;
+}
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media(max-width:480px){
+
+    /* ---------- Hero ---------- */
+
+    .hero h1{
+
+        font-size:3.2rem;
+
+    }
+
+
+    /* ======================================================
+       SKILLS & TOOLS — SMALL MOBILE
+    ====================================================== */
+
+    .skills-heading h2{
+
+        font-size:2.6rem;
+
+    }
+
+    .skills-heading p{
+
+        font-size:.82rem;
+
+    }
+
+    .skill-item{
+
+        grid-template-columns:44px 1fr;
+
+        gap:11px;
+
+    }
+
+    .skill-icon{
+
+        width:42px;
+        height:42px;
+
+    }
+
+    .skill-icon svg{
+
+        width:22px;
+        height:22px;
+
+    }
+
+    .skill-name-row h4{
+
+        font-size:.72rem;
+
+    }
+
+    .skill-name-row span{
+
+        font-size:.68rem;
+
+    }
+
+    .skill-content p{
+
+        font-size:.66rem;
+
+    }
+
+    .tools-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .tool-item{
+
+        border-bottom:1px solid #EDE2DA !important;
+
+    }
+
+    .tool-item:last-child{
+
+        border-bottom:none !important;
+
+    }
+
+    .skills-note{
+
+        padding:14px;
+
+    }
+
+    .skills-note p{
+
+        font-size:.66rem;
+
+    }
+
+
+    /* ======================================================
+       ABOUT — MY STRENGTHS
+    ====================================================== */
+
+    .strengths-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .strength-card{
+
+        border-right:none !important;
+
+        border-bottom:1px solid var(--border) !important;
+
+        padding:18px 20px;
+
+    }
+
+    .strength-card:last-child{
+
+        border-bottom:none !important;
+
+    }
+
+    .strength-card p{
+
+        font-size:.75rem;
+
+        max-width:260px;
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+
+    /* ---------- Hero Position ---------- */
+
+    .position{
+
+        font-size:.75rem;
+
+    }
+
+
+    /* ---------- Hero Buttons ---------- */
+
+    .hero-buttons{
+
+        width:100%;
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+    .btn,
+    .btn-outline{
+
+        width:100%;
+
+        min-width:0;
+
+        text-align:center;
+
+        padding:15px 20px;
+
+    }
+
+}
